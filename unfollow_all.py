@@ -1,17 +1,17 @@
+import time
 from instabot import Bot
 
-# Create a new instance of the bot
 bot = Bot()
 
-# Login to your account
-bot.login(username='your_username', password='your_password')
+bot.login(username='_limo.39', password='1379@Insta')
 
-# Get the list of people you follow
-following = bot.get_user_following('your_username')
+following = bot.get_user_following('_limo.39')
 
-# Unfollow each user in the list
+timeout = 1
+
 for user_id in following:
     bot.unfollow(user_id)
+    print(f"Unfollowed user {user_id}. Waiting {timeout} seconds...")
+    time.sleep(timeout)
 
-# Logout from your account
 bot.logout()
