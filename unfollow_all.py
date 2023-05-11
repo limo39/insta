@@ -3,7 +3,7 @@ from instabot import Bot
 
 bot = Bot()
 
-bot.login(username='_limo.39', password='1379@Insta')
+bot.login(username='your_username', password='your_password')
 
 following = bot.get_user_following('_limo.39')
 
