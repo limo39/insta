@@ -21,7 +21,11 @@ func main() {
 
 	fmt.Println("Logged in as:", insta.Account.Username)
 
-	following := insta.Account.Following()
+	if err := insta.Account.Following().Error(); err != nil {
+		panic(err)
+	}
+
+	following := insta.Account.Following().Users
 	totalUnfollows := min(maxUnfollows, len(following))
 
 	var wg sync.WaitGroup
